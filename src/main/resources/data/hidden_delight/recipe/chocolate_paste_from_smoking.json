@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "group": "hidden_delight:chocolate_paste_from_smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "hidden_delight:chocolate"
+  },
+  "result": {
+    "id": "hidden_delight:chocolate_paste"
+  },
+  "experience": 0.35
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "group": "hidden_years:chocolate_paste_from_smelting",
+  "category": "food",
+  "ingredient": {
+    "item": "hidden_years:chocolate"
+  },
+  "result": {
+    "id": "hidden_years:chocolate_paste"
+  },
+  "experience": 0.35
+}

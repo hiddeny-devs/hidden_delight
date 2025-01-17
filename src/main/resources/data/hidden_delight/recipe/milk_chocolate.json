@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "hidden_delight:milk_chocolate",
+  "ingredients": [
+    {
+      "tag": "c:buckets/milk"
+    },
+    {
+      "item": "hidden_delight:chocolate"
+    }
+  ],
+  "result": {
+    "id": "hidden_delight:milk_chocolate"
+  }
+}

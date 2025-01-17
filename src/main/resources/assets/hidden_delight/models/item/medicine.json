@@ -1,0 +1,86 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "hidden_delight:item/medicine_1"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "hidden_delight:id": 2
+      },
+      "model": "hidden_delight:item/medicine_2"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 3
+      },
+      "model": "hidden_delight:item/medicine_3"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 4
+      },
+      "model": "hidden_delight:item/medicine_4"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 5
+      },
+      "model": "hidden_delight:item/medicine_5"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 6
+      },
+      "model": "hidden_delight:item/medicine_6"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 7
+      },
+      "model": "hidden_delight:item/medicine_7"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 8
+      },
+      "model": "hidden_delight:item/medicine_8"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 9
+      },
+      "model": "hidden_delight:item/medicine_9"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 10
+      },
+      "model": "hidden_delight:item/medicine_10"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 11
+      },
+      "model": "hidden_delight:item/medicine_11"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 12
+      },
+      "model": "hidden_delight:item/medicine_12"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 13
+      },
+      "model": "hidden_delight:item/medicine_13"
+    },
+    {
+      "predicate": {
+        "hidden_delight:id": 14
+      },
+      "model": "hidden_delight:item/medicine_14"
+    }
+  ]
+}

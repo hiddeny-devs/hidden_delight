@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "group": "hidden_delight:chocolate_from_smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "minecraft:cocoa_beans"
+  },
+  "result": {
+    "id": "hidden_delight:chocolate"
+  },
+  "experience": 0.35
+}

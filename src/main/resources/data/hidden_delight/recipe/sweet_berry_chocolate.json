@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "hidden_delight:sweet_berry_chocolate",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "hidden_delight:chocolate"
+    }
+  ],
+  "result": {
+    "id": "hidden_delight:sweet_berry_chocolate"
+  }
+}

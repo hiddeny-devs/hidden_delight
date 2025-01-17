@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "hydev.hiddenyears.food.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FoodComponent$BuilderMixin",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

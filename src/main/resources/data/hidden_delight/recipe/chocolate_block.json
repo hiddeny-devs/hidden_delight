@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "hidden_delight:chocolate_block",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "hidden_delight:chocolate"
+    }
+  },
+  "result": {
+    "id": "hidden_delight:chocolate_block"
+  }
+}

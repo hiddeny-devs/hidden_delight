@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "hidden_delight",
+	"version": "${version}",
+	"name": "Hidden Delight",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Hidden Years Dev"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "BSD-3-Clause",
+	"icon": "assets/hidden_delight/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"adapter": "scala",
+				"value": "hydev.hiddenyears.food.HiddenDelight"
+			}
+		],
+		"client": [
+			{
+				"adapter": "scala",
+				"value": "hydev.hiddenyears.food.client.HiddenDelightClient"
+			}
+		]
+	},
+	"mixins": [
+		"hidden_delight.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.8",
+		"minecraft": ">=1.21- <1.21.2-",
+		"java": ">=21",
+		"fabric-api": "*",
+		"krysztal-language-scala": ">=3.1.0+scala.3.6.2"
+	}
+}

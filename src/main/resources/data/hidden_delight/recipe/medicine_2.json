@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "hidden_delight:medicine_2",
+  "ingredients": [
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "item": "minecraft:poppy"
+    }
+  ],
+  "result": {
+    "id": "hidden_delight:medicine",
+    "components": {
+      "hidden_delight:medicine_id": 2
+    }
+  }
+}

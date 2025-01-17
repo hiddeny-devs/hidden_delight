@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "hidden_delight:amethyst_chocolate",
+  "ingredients": [
+    {
+      "tag": "c:gems/amethyst"
+    },
+    {
+      "item": "hidden_delight:chocolate"
+    }
+  ],
+  "result": {
+    "id": "hidden_delight:amethyst_chocolate"
+  }
+}
