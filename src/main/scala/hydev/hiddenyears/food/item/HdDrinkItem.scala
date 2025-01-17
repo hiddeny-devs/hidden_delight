@@ -8,11 +8,8 @@ import net.minecraft.util.UseAction
 import net.minecraft.world.World
 import org.apache.commons.lang3.function.TriConsumer
 
-class HdDrinkItem(
-    settings: Settings,
-    foodComponent: FoodComponent,
-    onUse: TriConsumer[ItemStack, World, LivingEntity]
-) extends HdItem(settings, foodComponent, onUse) {
+class HdDrinkItem(settings: Settings, foodComponent: FoodComponent, onUse: TriConsumer[ItemStack, World, LivingEntity])
+    extends HdItem(settings, foodComponent, onUse) {
   def this(settings: Settings, foodComponent: FoodComponent) = {
     this(settings, foodComponent, (_, _, _) => {})
   }

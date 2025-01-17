@@ -7,6 +7,10 @@ import net.minecraft.registry.tag.TagKey
 object HdTags {
   val COPPER_FOODS: TagKey[Item] = TagKey.of(
     RegistryKeys.ITEM,
-    HiddenDelight.ofMod("hidden_years:foods/copper")
+    HiddenDelight.ofMod("foods/copper")
+  )
+  val FOODS: TagKey[Item] = TagKey.of(
+    RegistryKeys.ITEM,
+    HiddenDelight.ofMod("foods")
   )
 }

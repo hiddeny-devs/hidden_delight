@@ -1,45 +1,58 @@
 package hydev.hiddenyears.food.item
 
+import hydev.hiddenyears.food.item.HdMedicineItem.getMaterials
 import hydev.hiddenyears.food.util.isHarmful
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.effect.{StatusEffectInstance, StatusEffects}
 import net.minecraft.item.Item.Settings
 import net.minecraft.item.tooltip.TooltipType
-import net.minecraft.item.{Item, ItemStack}
-import net.minecraft.text.Text
+import net.minecraft.item.{Item, ItemStack, Items}
+import net.minecraft.text.{MutableText, Text}
 import net.minecraft.world.World
 
 import java.util
 
-final class HdMedicineItem
-    extends HdDrinkItem(
-      new Settings().maxCount(1),
-      HdFoodComponents.MEDICINE,
-      HdMedicineItem.onUse
-    ) {
-  override def appendTooltip(
-      stack: ItemStack,
-      context: Item.TooltipContext,
-      tooltip: util.List[Text],
-      `type`: TooltipType
-  ): Unit = {
+final class HdMedicineItem extends HdDrinkItem(new Settings().maxCount(1), HdFoodComponents.MEDICINE, HdMedicineItem.onUse) {
+  override def appendTooltip(stack: ItemStack, context: Item.TooltipContext, tooltip: util.List[Text], `type`: TooltipType): Unit = {
     val id: Integer = stack.get(HdDataComponentTypes.MEDICINE_ID)
     if (id != null && `type`.isCreative) {
-      tooltip.add(
-        Text.translatable(
-          "filled_map.id", // So we do not need any other translate key
-          id
-        )
-      )
+      val text: MutableText = Text.translatable("hidden_delight.medicine.materials")
+      getMaterials(id).foreach(item => {
+        text.append(item.getName)
+      })
+      tooltip.add(text)
     }
   }
 }
-private object HdMedicineItem {
-  private def onUse(
-      stack: ItemStack,
-      world: World,
-      livingEntity: LivingEntity
-  ): Unit = {
+object HdMedicineItem {
+  def getMaterials(id: Int): Array[Item] = {
+    id match {
+      case 1 => Array(Items.DANDELION)
+      case 2 => Array(Items.POPPY)
+      case 3 => Array(Items.BLUE_ORCHID)
+      case 4 => Array(Items.ALLIUM)
+      case 5 => Array(Items.AZURE_BLUET)
+      case 6 =>
+        Array(
+          Items.RED_TULIP,
+          Items.ORANGE_TULIP,
+          Items.WHITE_TULIP,
+          Items.PINK_TULIP
+        )
+      case 7  => Array(Items.OXEYE_DAISY)
+      case 8  => Array(Items.CORNFLOWER)
+      case 9  => Array(Items.LILY_OF_THE_VALLEY)
+      case 10 => Array(Items.WITHER_ROSE)
+      case 11 => Array(Items.TORCHFLOWER)
+      case 12 => Array(Items.PITCHER_PLANT)
+      case 13 => Array(Items.SEAGRASS)
+      case 14 => Array(Items.SUNFLOWER)
+    }
+  }
+
+  def validIds: List[Int] = (1 to 14).toList
+
+  private def onUse(stack: ItemStack, world: World, livingEntity: LivingEntity): Unit = {
     if (world.isClient) {
       return
     }

@@ -5,19 +5,18 @@ import net.minecraft.block.AbstractBlock.Settings
 import net.minecraft.block.{Block, MapColor}
 import net.minecraft.registry.{Registries, Registry}
 import net.minecraft.sound.BlockSoundGroup
-import net.minecraft.util.{DyeColor, Identifier}
+import net.minecraft.util.Identifier
 
 object HdBlocks {
   val CHOCOLATE_BRICKS: Block = register(
-    new Block(
-      Settings
-        .create()
-        .solid()
-        .sounds(BlockSoundGroup.METAL)
-        .mapColor(MapColor.LIGHT_GRAY)
-        .hardness(1.9f)
-        .resistance(6.0f)
-        .requiresTool()
+    new Block(Settings
+      .create()
+      .solid()
+      .sounds(BlockSoundGroup.METAL)
+      .mapColor(MapColor.LIGHT_GRAY)
+      .hardness(1.9f)
+      .resistance(6.0f)
+      .requiresTool()
     ),
     "chocolate_bricks"
   )

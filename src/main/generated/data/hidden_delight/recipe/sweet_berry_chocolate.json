@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "hidden_delight:chocolate"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "hidden_delight:sweet_berry_chocolate"
+  }
+}

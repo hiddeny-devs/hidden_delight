@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_marshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hidden_delight:marshmallow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sweet_berries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sweet_berries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hidden_delight:sweet_berry_marshmallow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sweet_berries",
+      "has_marshmallow"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hidden_delight:sweet_berry_marshmallow"
+    ]
+  }
+}

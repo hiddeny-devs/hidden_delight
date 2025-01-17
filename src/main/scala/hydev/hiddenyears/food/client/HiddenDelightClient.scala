@@ -12,9 +12,7 @@ object HiddenDelightClient extends ClientModInitializer {
     ModelPredicateProviderRegistry.register(
       HdItems.MEDICINE,
       HiddenDelight.ofMod("id"),
-      (stack: ItemStack, _, _, _) => {
-        stack.get(HdDataComponentTypes.MEDICINE_ID).floatValue()
-      }
+      (stack: ItemStack, _, _, _) => { stack.get(HdDataComponentTypes.MEDICINE_ID).floatValue() }
     )
   }
 }

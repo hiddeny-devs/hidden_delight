@@ -50,3 +50,7 @@ jar {
     from("LICENSE")
     duplicatesStrategy = DuplicatesStrategy.WARN
 }
+
+fabricApi {
+	configureDataGeneration()
+}

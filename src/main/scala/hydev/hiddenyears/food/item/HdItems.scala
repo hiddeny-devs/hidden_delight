@@ -4,6 +4,7 @@ import hydev.hiddenyears.food.HiddenDelight
 import hydev.hiddenyears.food.block.HdBlocks
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.block.Block
+import net.minecraft.component.{ComponentChanges, ComponentMap}
 import net.minecraft.component.`type`.FoodComponent
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
@@ -23,9 +24,8 @@ object HdItems {
     HdFoodComponents.AMETHYST_CHOCOLATE,
     (_, _, livingEntity: LivingEntity) => {
       livingEntity match
-        case player: PlayerEntity =>
-          player.addExperienceLevels(2)
-        case _ =>
+        case player: PlayerEntity => player.addExperienceLevels(2)
+        case _                    =>
     }
   )
 
@@ -35,14 +35,12 @@ object HdItems {
     HdFoodComponents.AMETHYST_MARSHMALLOW,
     (_, _, livingEntity: LivingEntity) => {
       livingEntity match
-        case player: PlayerEntity =>
-          player.addExperienceLevels(3)
-        case _ =>
+        case player: PlayerEntity => player.addExperienceLevels(3)
+        case _                    =>
     }
   )
 
-  val CHOCOLATE: HdFoodItem =
-    register("chocolate", new Settings(), HdFoodComponents.CHOCOLATE)
+  val CHOCOLATE: HdFoodItem = register("chocolate", new Settings(), HdFoodComponents.CHOCOLATE)
 
   val CHOCOLATE_BAR: HdFoodItem = register(
     "chocolate_bar",
@@ -56,21 +54,15 @@ object HdItems {
     HdFoodComponents.CHOCOLATE_PASTE
   )
 
-  val HONEY_CANDY: HdFoodItem =
-    register("honey_candy", new Settings(), HdFoodComponents.HONEY_CANDY)
+  val HONEY_CANDY: HdFoodItem = register("honey_candy", new Settings(), HdFoodComponents.HONEY_CANDY)
 
-  val MARSHMALLOW: HdFoodItem =
-    register("marshmallow", new Settings(), HdFoodComponents.MARSHMALLOW)
+  val MARSHMALLOW: HdFoodItem = register("marshmallow", new Settings(), HdFoodComponents.MARSHMALLOW)
 
   val MILK_CHOCOLATE: HdFoodItem = register(
     "milk_chocolate",
     new Settings(),
     HdFoodComponents.MILK_CHOCOLATE,
-    (_, world: World, livingEntity: LivingEntity) => {
-      if (!world.isClient) {
-        livingEntity.clearStatusEffects()
-      }
-    }
+    (_, world: World, livingEntity: LivingEntity) => { if (!world.isClient) { livingEntity.clearStatusEffects() } }
   )
 
   val SWEET_BERRY_CHOCOLATE: HdFoodItem = register(
@@ -91,7 +83,6 @@ object HdItems {
   )
 
   // copper_foods
-
   val COPPER_APPLE: HdFoodItem = register(
     "copper_apple",
     new Settings().rarity(Rarity.RARE),
@@ -149,11 +140,9 @@ object HdItems {
     new HdMedicineItem()
   )
   // blocks
-  val CHOCOLATE_BRICKS: BlockItem =
-    registerBlockItem("chocolate_bricks", HdBlocks.CHOCOLATE_BRICKS);
+  val CHOCOLATE_BRICKS: BlockItem = registerBlockItem("chocolate_bricks", HdBlocks.CHOCOLATE_BRICKS);
 
-  val CHOCOLATE_BLOCK: BlockItem =
-    registerBlockItem("chocolate_block", HdBlocks.CHOCOLATE_BLOCK);
+  val CHOCOLATE_BLOCK: BlockItem = registerBlockItem("chocolate_block", HdBlocks.CHOCOLATE_BLOCK);
 
   def init(): Unit = {
     ItemGroupEvents
@@ -180,36 +169,30 @@ object HdItems {
         itemGroup.add(COPPER_HODGEPODGE)
         itemGroup.add(CHOCOLATE_BRICKS)
         itemGroup.add(CHOCOLATE_BLOCK)
+        (1 to 14)
+          .foreach(i =>
+            itemGroup.add(
+              new ItemStack(
+                MEDICINE.getRegistryEntry,
+                1,
+                ComponentChanges
+                  .builder()
+                  .add(HdDataComponentTypes.MEDICINE_ID, i)
+                  .build()
+              )
+            )
+          )
       })
   }
 
-  private def register(
-      id: String,
-      settings: Settings,
-      foodComponent: FoodComponent
-  ): HdFoodItem = {
-    val itemId: Identifier =
-      HiddenDelight.ofMod(id)
-    Registry.register(
-      Registries.ITEM,
-      itemId,
-      new HdFoodItem(settings, foodComponent)
-    )
+  private def register(id: String, settings: Settings, foodComponent: FoodComponent): HdFoodItem = {
+    val itemId: Identifier = HiddenDelight.ofMod(id)
+    Registry.register(Registries.ITEM, itemId, new HdFoodItem(settings, foodComponent))
   }
 
-  private def register(
-      id: String,
-      settings: Settings,
-      foodComponent: FoodComponent,
-      onUse: TriConsumer[ItemStack, World, LivingEntity]
-  ): HdFoodItem = {
-    val itemId: Identifier =
-      HiddenDelight.ofMod(id)
-    Registry.register(
-      Registries.ITEM,
-      itemId,
-      new HdFoodItem(settings, foodComponent, onUse)
-    )
+  private def register(id: String, settings: Settings, foodComponent: FoodComponent, onUse: TriConsumer[ItemStack, World, LivingEntity]): HdFoodItem = {
+    val itemId: Identifier = HiddenDelight.ofMod(id)
+    Registry.register(Registries.ITEM, itemId, new HdFoodItem(settings, foodComponent, onUse))
   }
 
   private def registerBlockItem(id: String, block: Block): BlockItem = {
@@ -217,8 +200,7 @@ object HdItems {
   }
 
   private def register[T <: Item](id: String, item: T): T = {
-    val itemId: Identifier =
-      HiddenDelight.ofMod(id)
+    val itemId: Identifier = HiddenDelight.ofMod(id)
     Registry.register(Registries.ITEM, itemId, item)
   }
 }

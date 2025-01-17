@@ -10,16 +10,9 @@ import net.minecraft.util.{Hand, TypedActionResult}
 import net.minecraft.world.World
 import org.apache.commons.lang3.function.TriConsumer
 
-abstract class HdItem(
-    settings: Settings,
-    foodComponent: FoodComponent,
-    private val onUse: TriConsumer[ItemStack, World, LivingEntity]
-) extends Item(settings.food(foodComponent)) {
-  override final def use(
-      world: World,
-      user: PlayerEntity,
-      hand: Hand
-  ): TypedActionResult[ItemStack] = {
+abstract class HdItem(settings: Settings, foodComponent: FoodComponent, private val onUse: TriConsumer[ItemStack, World, LivingEntity])
+    extends Item(settings.food(foodComponent)) {
+  override final def use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult[ItemStack] = {
     val itemStack: ItemStack = user.getStackInHand(hand)
     val foodComponent: FoodComponent = itemStack.get(DataComponentTypes.FOOD)
     if (user.canConsume(foodComponent.canAlwaysEat)) {
@@ -28,13 +21,8 @@ abstract class HdItem(
     } else TypedActionResult.fail(itemStack)
   }
 
-  override final def finishUsing(
-      stack: ItemStack,
-      world: World,
-      user: LivingEntity
-  ): ItemStack = {
-    val newItemStack: ItemStack =
-      user.eatFood(world, stack, stack.get(DataComponentTypes.FOOD))
+  override final def finishUsing(stack: ItemStack, world: World, user: LivingEntity): ItemStack = {
+    val newItemStack: ItemStack = user.eatFood(world, stack, stack.get(DataComponentTypes.FOOD))
     onUse.accept(stack, world, user)
     newItemStack
   }

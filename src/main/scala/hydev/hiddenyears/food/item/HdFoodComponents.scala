@@ -30,28 +30,19 @@ object HdFoodComponents {
     .nutrition(10)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 45 * 20),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 45 * 20), 1.0f)
     .build()
   val HONEY_CANDY: FoodComponent = new FoodComponent.Builder()
     .nutrition(20)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.SATURATION, 30 * 20),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 30 * 20), 1.0f)
     .build()
   val MARSHMALLOW: FoodComponent = new FoodComponent.Builder()
     .nutrition(5)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.LEVITATION, 5 * 20),
-      0.5f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 5 * 20), 0.5f)
     .build()
   val MILK_CHOCOLATE: FoodComponent = new FoodComponent.Builder()
     .nutrition(10)
@@ -62,29 +53,20 @@ object HdFoodComponents {
     .nutrition(8)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1, 1),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1, 1), 1.0f)
     .build()
   val SWEET_BERRY_MARSHMALLOW: FoodComponent = new FoodComponent.Builder()
     .nutrition(5)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1), 1.0f)
     .build()
   val SYRUP: FoodComponent = new FoodComponent.Builder()
     .nutrition(2)
     .saturationModifier(1.0f)
     .alwaysEdible()
     .usingConvertsTo(Items.GLASS_BOTTLE)
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1), 1.0f)
     .asInstanceOf[FoodComponent$BuilderInjector]
     .hidden_delight$setEatSeconds(2.0f)
     .build()
@@ -93,31 +75,16 @@ object HdFoodComponents {
     .nutrition(8)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.ABSORPTION, 600),
-      1.0f
-    )
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 200),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 600), 1.0f)
+    .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 200), 1.0f)
     .build()
   val ENCHANTED_COPPER_APPLE: FoodComponent = new FoodComponent.Builder()
     .nutrition(8)
     .saturationModifier(0.6f)
     .alwaysEdible()
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.ABSORPTION, 1200),
-      1.0f
-    )
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1200),
-      1.0f
-    )
-    .statusEffect(
-      new StatusEffectInstance(StatusEffects.SPEED, 200),
-      1.0f
-    )
+    .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200), 1.0f)
+    .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1200), 1.0f)
+    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200), 1.0f)
     .build()
   val COPPER_BREAD: FoodComponent = new FoodComponent.Builder()
     .nutrition(9)

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "hidden_delight:chocolate_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "hidden_delight:chocolate_bricks"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:potato"
+    },
+    "X": {
+      "tag": "c:ingots/copper"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XAX",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hidden_delight:copper_potato"
+  }
+}
