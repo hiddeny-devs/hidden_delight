@@ -1,7 +1,7 @@
 package hydev.hiddenyears.food
 
 import hydev.hiddenyears.food.block.HdBlocks
-import hydev.hiddenyears.food.item.HdItems
+import hydev.hiddenyears.food.item.{HdItemGroups, HdItems}
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.{ItemGroup, ItemStack}
@@ -17,6 +17,7 @@ object HiddenDelight extends ModInitializer {
   override def onInitialize(): Unit = {
     HdBlocks.init()
     HdItems.init()
+    HdItemGroups.init()
     LOGGER.info("Mod initialized! Thank you for playing!")
   }
   def ofMod(path: String): Identifier = {
